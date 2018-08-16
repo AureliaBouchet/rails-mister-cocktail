@@ -8,3 +8,9 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import 'bootstrap';
+
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
+
+// import { HiddingNavbarOnBanner } from '../components/navbar';
+// HiddingNavbarOnBanner();

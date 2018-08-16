@@ -2,11 +2,8 @@
 
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.input :name %>
+  <%= f.input :picture_url %>
   <%= f.submit %>
 <% end %>
 
-<h2> Add a new dose (ingredient/description pair) : </h2>
-
-<%= link_to "Add a new dose (ingredient/description pair)", cocktails_path %>
-
-<%= link_to "Back to cocktails", cocktails_path %>
+<p><%= link_to "Back to cocktails", cocktails_path %></p>

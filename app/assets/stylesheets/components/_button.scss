@@ -1,0 +1,13 @@
+.btn-border-white{
+  border:solid 1px white;
+  border-radius: 6px;
+  text-decoration:none;
+  color: white;
+  font-size: 14px;
+  font-weight:lighter;
+  padding :15px 60px;
+  &:hover{
+    text-decoration: none;
+    color:#e8e8e8;
+  }
+}

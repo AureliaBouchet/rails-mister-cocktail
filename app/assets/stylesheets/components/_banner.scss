@@ -1,0 +1,28 @@
+.banner{
+  width:100vw;
+  height:100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3),
+    rgba(0,0,0,0.2)),
+    asset-url('home2.jpeg');
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  h1{
+    font-family: $banner-font;
+  }
+  p{
+    color:white;
+  }
+
+}
+
+
+.banner-button{
+  margin-top: 30px;
+}
