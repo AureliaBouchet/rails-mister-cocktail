@@ -9,8 +9,10 @@
 
 import 'bootstrap';
 
+import { DisplayingFormWhenClick } from '../components/button';
+DisplayingFormWhenClick();
+
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-// import { HiddingNavbarOnBanner } from '../components/navbar';
-// HiddingNavbarOnBanner();
+

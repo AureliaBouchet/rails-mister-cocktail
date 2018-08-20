@@ -1,9 +1,23 @@
-<h1>Add a cocktail</h1>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :picture_url %>
-  <%= f.submit %>
-<% end %>
+<div class="card-container">
 
-<p><%= link_to "Back to cocktails", cocktails_path %></p>
+  <div class="medium-card background-darker">
+
+    <div class="form-container">
+      <h1>Add a cocktail</h1>
+
+      <div class="link-style text-center">
+        <i class="fas fa-undo-alt"> </i>
+        <%= link_to "Back to cocktails", cocktails_path %>
+      </div>
+
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+
+</div>
+</div>

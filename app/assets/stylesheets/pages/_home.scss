@@ -2,10 +2,48 @@
 
 .contain{
   position:relative;
+  background-image:
+    linear-gradient(rgba(200,200,200,0.8),
+    rgba(150,150,150,0.4)),
+    asset-url('home2.jpeg');
+  background-size: cover;
 }
 
 .banner{
   position: absolute;
   top:0;
   z-index:10;
+}
+
+body{
+    // background-color:#282a2d;
+    font-family: $banner-font;
+    color:#efefef;
+    // color: #282a2d;
+  }
+
+a{
+  text-decoration:none;
+  // color: #282a2d;
+  color:#efefef;
+}
+a:hover{
+  text-decoration:none;
+  color: #282a2d;
+  // color:#efefef;
+}
+
+li {
+  font-size:14px;
+}
+
+.link-style{
+  font-size:12px;
+  font-style: italic;
+}
+
+
+.title{
+  margin-top: 0;
+  padding:20px 0;
 }

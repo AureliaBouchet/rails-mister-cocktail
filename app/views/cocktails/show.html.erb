@@ -1,25 +1,51 @@
 
-<h1 class="text-center">Cocktail : <%= @cocktail.name %></h1>
+<div class=" title background-darker">
+  <h1 class="text-center">Cocktail : <%= @cocktail.name %></h1>
+
+  <!-- Retour a la liste -->
+
+   <div class="link-style text-center">
+    <i class="fas fa-undo-alt"> </i>
+    <%= link_to "Back to cocktails", cocktails_path %>
+   </div>
+ </div>
+
+<!-- Card section -->
 
 <div class="card-container">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.picture_url %>);">
+
+  <div class="medium-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @cocktail.photo%>);">
   </div>
 
-  <div class="big-card cocktail-description">
-    <h2>Doses :</h2>
+  <div class="medium-card cocktail-description background-darker">
+    <h2 class="text-center">Recipe</h2>
     <ul>
     <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.ingredient.name %> : <%= dose.description %> <%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt" %> </li>
+      <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %>    -    <%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt" %> </li>
       <%end %>
     </ul>
-   <i class="fas fa-plus"></i> <%= link_to "Add a new dose (ingredient/description pair)", new_cocktail_dose_path(@cocktail) %>
-    <%= simple_form_for(@cocktail) do |f| %>
-      <%= f.input :picture_url %>
-      <%= f.submit %>
-    <% end %>
+
+    <div class="link-style text-center">
+      <i class="fas fa-plus link-style"></i>
+      <%= link_to "Add a new dose (ingredient/description pair)", new_cocktail_dose_path(@cocktail), class: "link-style" %>
+     </div>
+
+    <div class="form-container">
+
+      <h2 class="text-center">
+        <button id="form-title" class = "btn-border-white"> <i class="fas fa-chevron-circle-down"> </i> Edit your cocktail</button> </h2>
+
+        <div id="cocktail-form" class="form-content form-hidden">
+          <%= simple_form_for(@cocktail) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+
+    </div>
   </div>
+
 </div>
 
-<div class="card-links-footer">
-  <%= link_to "Back to cocktails", cocktails_path, class: 'btn btn-primary' %>
-</div>
